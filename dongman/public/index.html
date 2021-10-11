@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./js/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <title>首页</title>
+    <script src="./js/vue.js"></script>
+    <style>
+.first2>p{
+  position: fixed;
+  background-color:#F4FBEC;
+  width: 9%;
+  height: 40px;
+  right: 6%;
+  top: 50px;
+  line-height:40px;
+  color: deepskyblue;
+  display: none;
+}
+.first2>a:hover+p{display: block;}
+    </style>
+</head>
+
+<body>
+ <div id="app"> 
+  <div class="container">
+        <div class="row mt-3 m-0">
+            <div class="first">
+                <a href="./index.html"><img src="./img/logo.png" alt=""></a>
+            </div>
+            <div class="first1 d-flex  align-items-center">
+                <input readonly="readonly" placeholder="快速登陆才能查询哦！" class="border-0 w-75 h-75 ml-2">
+                <button class="bg-success border-0 ml-2">搜索</button>
+            </div>
+            <div class="first2 d-flex align-items-center">
+              <a href="./index0.html" id="">登录</a> 
+              <p>有用户注释哦！</p>
+              <a href="./index1_4.html" style="margin-right: 30px;">排行榜</a>
+              <i class="hot"></i>
+            </div>
+                <div class="first3 mt-5 d-flex">
+                    <a href="javascript:;">首页</a>
+                    <a href="./index1.html" class="ml-5">日本动漫</a>
+                    <a href="./index1_2.html" class="ml-5">国产动漫</a>
+                    <a href="./index1_3.html" class="ml-5">剧场版</a>
+                </div> 
+        </div>
+        <div class="row first4 mt-3 ml-0 ">
+          <div class="first5">
+            <div class="carousel slide" id="carousel-858144">
+                <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#carousel-858144" class="active">
+                    </li>
+                    <li data-slide-to="1" data-target="#carousel-858144">
+                    </li>
+                    <li data-slide-to="2" data-target="#carousel-858144">
+                    </li>
+                    <li data-slide-to="3" data-target="#carousel-858144">
+                    </li>
+                    <li data-slide-to="4" data-target="#carousel-858144">
+                    </li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="./index2.html"><img class="d-block w-100" alt="Carousel Bootstrap First" src="./img/lb1.jpg" /></a>
+                        <div class="carousel-caption">
+                            <a href="./index2.html"><h4>
+                                约会大作战
+                            </h4></a>
+                            <p>
+                              デート・ア・ライブⅣ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="./index2.html"><img class="d-block w-100" alt="Carousel Bootstrap Second" src="./img/lb2.jpg" /></a>
+                        <div class="carousel-caption">
+                            <a href="./index2.html"><h4>
+                              本田小狼与我
+                            </h4></a>
+                            <p>
+                              スーパーカブ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="./index2.html"><img class="d-block w-100" alt="Carousel Bootstrap Third" src="./img/lb3.jpg" /></a>
+                        <div class="carousel-caption">
+                            <a href="./index2.html"><h4>
+                              夏目友人帐
+                            </h4></a>
+                            <p>
+                              こしと怪しき来訪者
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="./index2.html"><img class="d-block w-100" alt="Carousel Bootstrap Third" src="./img/lb4.jpg" /></a>
+                        <div class="carousel-caption">
+                            <a href="./index2.html"><h4>
+                              恶玉DRIVE
+                            </h4></a>
+                            <p>
+                              アクダマドライブ
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="./index2.html"><img class="d-block w-100" alt="Carousel Bootstrap Third" src="./img/lb5.jpg" /></a>
+                        <div class="carousel-caption">
+                            <a href="./index2.html"><h4>
+                              咒术回战
+                            </h4></a>
+                            <p>
+                              呪術廻戦
+                            </p>
+                        </div>
+                    </div>
+                </div> <a class="carousel-control-prev" href="#carousel-858144" data-slide="prev"><span
+                        class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a
+                    class="carousel-control-next" href="#carousel-858144" data-slide="next"><span
+                        class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
+            </div>
+        </div>
+                <div class="first6">
+                    <h2>每日更新列表</h2>
+                    <div class="first7">
+                        <button :style="{background:i==0?'#fff':'',color:i==0?'red':'',fontWeight:i==0?'600':''}" @click="change(0)">周一</button><button :style="{background:i==1?'#fff':'',color:i==1?'red':'',fontWeight:i==1?'600':''}" @click="change(1)">周二</button><button :style="{background:i==2?'#fff':'',color:i==2?'red':'',fontWeight:i==2?'600':''}" @click="change(2)">周三</button><button :style="{background:i==3?'#fff':'',color:i==3?'red':'',fontWeight:i==3?'600':''}" @click="change(3)">周四</button><button :style="{background:i==4?'#fff':'',color:i==4?'red':'',fontWeight:i==4?'600':''}" @click="change(4)">周五</button><button :style="{background:i==5?'#fff':'',color:i==5?'red':'',fontWeight:i==5?'600':''}" @click="change(5)">周六</button><button :style="{background:i==6?'#fff':'',color:i==6?'red':'',fontWeight:i==6?'600':''}" @click="change(6)">周日</button>
+                    </div>
+                    <div class="first8 position-relative">
+                    <ul v-if="i==0">
+                        <li><a href="./index2.html" class="afirst0">死神少爷与黑女仆</a><a href="javascript:;" class="afirst">第3集</a></li>
+                        <li><a href="./index2.html" class="afirst0">侦探已经死了</a><a href="javascript:;" class="afirst">第3集</a></li>
+                        <li><a href="./index2.html" class="afirst0">盖塔机器人ARC</a><a href="javascript:;" class="afirst">第3集</a></li>
+                        <li><a href="./index2.html" class="afirst0">魔法科高校的优等生</a><a href="javascript:;" class="afirst">第3集</a></li>
+                        <li><a href="./index2.html" class="afirst0">光之美少女</a><a href="javascript:;" class="afirst">第3集</a></li>
+                        <li><a href="./index2.html" class="afirst0">数码宝贝(2020)</a><a href="javascript:;" class="afirst">第3集</a></li>
+                        <li><a href="./index2.html" class="afirst0">测不准的阿波连同学</a><a href="javascript:;" class="afirst">第3集</a></li>
+                    </ul>
+                    <ul v-else-if="i==1">
+                      <li><a href="./index2.html" class="afirst0">特斯拉笔记</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">假面骑士圣刃</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">海贼王</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">东京卍复仇者</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">现实主义勇者的王国再建记</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">RE-MAIN</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">伊甸星原</a><a href="javascript:;" class="afirst">第3集</a></li>
+                    </ul>
+                    <ul v-else-if="i==2">
+                      <li><a href="./index2.html" class="afirst0">约会大作战</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">本田小狼与我</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">夏目友人帐</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">恶玉DRIVE</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">咒术回战</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">斗罗大陆</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">时空恋人</a><a href="javascript:;" class="afirst">第3集</a></li>
+                    </ul>
+                    <ul v-else-if="i==3">
+                      <li><a href="./index2.html" class="afirst0">皇帝陛下的天价宝贝</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">酷大叔的恋爱物语</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">恋爱上上签</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">灵剑尊</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">天荒战神</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">流星幻剑</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">武神主宰</a><a href="javascript:;" class="afirst">第3集</a></li>
+                    </ul>
+                    <ul v-else-if="i==4">
+                      <li><a href="./index2.html" class="afirst0">绝世武魂</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">斗破苍穹</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">异世界中药铺</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">解离妖圣</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">善良的阿呆</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">一念永恒</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">名侦探柯南</a><a href="javascript:;" class="afirst">第3集</a></li>
+                    </ul>
+                    <ul v-else-if="i==5">
+                      <li><a href="./index2.html" class="afirst0">银魂 THE FINAL</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">言语如苏打般涌现</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">光之美少女 梦想的小镇</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">精灵宝可梦剧场版</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">隐瞒之事-秘密是什么</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">你是彼方</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">异世界四重奏剧场版</a><a href="javascript:;" class="afirst">第3集</a></li> 
+                    </ul>
+                    <ul v-else>
+                      <li><a href="./index2.html" class="afirst0">工作细胞！！</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">魔法少女伊莉雅剧场版</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">荒野的寿飞行队</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">机动战士高达 闪光的哈萨维</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">妄想学生会2剧场版</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">东京七姐妹 我们化作青空</a><a href="javascript:;" class="afirst">第3集</a></li>
+                      <li><a href="./index2.html" class="afirst0">鬼灭之刃剧场版 无限列车篇</a><a href="javascript:;" class="afirst">第3集</a></li> 
+                    </ul>
+                    </div>
+                </div>
+        </div>
+        <div class="row ml-0">
+          <div class="first11">
+            <div class="first9 mt-3">
+              <div>
+                  <a href="./index1.html" class="afirst1">日本动漫</a>
+                  <a href="./index1.html" class="afirst2 float-right mr-4">更多>></a>
+              </div>
+              <div class="d-flex flex-wrap">
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/日本动漫/r1.jpg" alt="死神少爷与黑女仆"></a>  
+                   <p><a href="./index2.html" class="afirst2">死神少爷与黑女仆</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html?lid=2"><img src="./img/日本动漫/r2.jpg" alt="侦探已经死了"></a>  
+                   <p><a href="./index2.html?lid=2" class="afirst2">侦探已经死了</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/日本动漫/r3.jpg" alt="盖塔机器人ARC"></a>  
+                   <p><a href="./index2.html" class="afirst2">盖塔机器人ARC</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/日本动漫/r4.jpg" alt="魔法科高校的优等生"></a>  
+                   <p><a href="./index2.html" class="afirst2">魔法科高校的优等生</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/日本动漫/r5.jpg" alt="光之美少女"></a>  
+                   <p><a href="./index2.html" class="afirst2">光之美少女</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/日本动漫/r6.jpg" alt="数码宝贝(2020)"></a>  
+                   <p><a href="./index2.html" class="afirst2">数码宝贝(2020)</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/日本动漫/r7.jpg" alt="测不准的阿波连同学"></a>  
+                   <p><a href="./index2.html" class="afirst2">测不准的阿波连同学</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/日本动漫/r8.jpg" alt="特斯拉笔记"></a>  
+                   <p><a href="./index2.html" class="afirst2">特斯拉笔记</a></p>
+                   <p class="p1">最新: <a href="./index2.html" class="afirst3">第3集</a></p>
+                 </div>         
+              </div> 
+              </div>                 
+            <div class="first9 mt-2">
+              <div>
+                  <a href="./index1_2.html" class="afirst1">国产动漫</a>
+                  <a href="./index1_2.html" class="afirst2 float-right mr-4">更多>></a>
+              </div>
+              <div class="d-flex flex-wrap">
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g1.jpg" alt="斗罗大陆"></a>  
+                   <p><a href="./index2.html" class="afirst2">斗罗大陆</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g2.jpg" alt="时空恋人"></a>  
+                   <p><a href="./index2.html" class="afirst2">时空恋人</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g3.jpg" alt="皇帝陛下的天价宝贝"></a>  
+                   <p><a href="./index2.html" class="afirst2">皇帝陛下的天价宝贝</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g4.jpg" alt="酷大叔的恋爱物语"></a>  
+                   <p><a href="./index2.html" class="afirst2">酷大叔的恋爱物语</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g5.jpg" alt="恋爱上上签"></a>  
+                   <p><a href="./index2.html" class="afirst2">恋爱上上签</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g6.jpg" alt="灵剑尊"></a>  
+                   <p><a href="./index2.html" class="afirst2">灵剑尊</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g7.jpg" alt="天荒战神"></a>  
+                   <p><a href="./index2.html" class="afirst2">天荒战神</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/国产动漫/g8.jpg" alt="流星幻剑"></a>  
+                   <p><a href="./index2.html" class="afirst2">流星幻剑</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">第3集</a></p>
+                 </div> 
+                </div>
+               </div>                    
+              <div class="first9 mt-2">
+              <div>
+                  <a href="./index1_3.html" class="afirst1">剧场版动漫</a>
+                  <a href="./index1_3.html" class="afirst2 float-right mr-4">更多>></a>
+              </div>
+              <div class="d-flex flex-wrap">
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j1.jpg" alt="名侦探柯南"></a>  
+                   <p><a href="./index2.html" class="afirst2">名侦探柯南</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j2.jpg" alt="银魂 THE FINAL"></a>  
+                   <p><a href="./index2.html" class="afirst2">银魂 THE FINAL</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j3.jpg" alt="言语如苏打般涌现"></a>  
+                   <p><a href="./index2.html" class="afirst2">言语如苏打般涌现</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j4.jpg" alt="光之美少女 梦想的小镇"></a>  
+                   <p><a href="./index2.html" class="afirst2">光之美少女 梦想的小镇</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j5.jpg" alt="精灵宝可梦剧场版"></a>  
+                   <p><a href="./index2.html" class="afirst2">精灵宝可梦剧场版</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j6.jpg" alt="隐瞒之事-秘密是什么"></a>  
+                   <p><a href="./index2.html" class="afirst2">隐瞒之事-秘密是什么</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j7.jpg" alt="你是彼方"></a>  
+                   <p><a href="./index2.html" class="afirst2">你是彼方</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+                 <div class="first10">
+                   <a href="./index2.html"><img src="./img/剧场版/j8.jpg" alt="异世界四重奏剧场版"></a>  
+                   <p><a href="./index2.html" class="afirst2">异世界四重奏剧场版</a></p>
+                   <p class="p1">最新: <a href="javascript:;" class="afirst3">连载中</a></p>
+                 </div> 
+             </div> 
+               </div>
+            </div>                
+             <div class="first12 mt-1">
+             <h2>暂存动漫排行耪</h2>
+             <ul class="mt-2 ml-3 mr-2 list-unstyled">
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/日本动漫/r10.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">海贼王</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:海贼王哥尔·D·罗杰在临死前曾留下了关于其毕生的财富“One Piece”的消息，由此引得群雄并起，众海盗们为了这笔传说中的巨额财富展开争夺.</span></div>
+                 </div>
+               </li>
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/国产动漫/g11.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">斗破苍穹</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:萧炎为唤醒老师药老，来到帝都参加炼药师大会，却因过人实力而被意图不轨的敌人暗算。危急关头，萧炎力挽狂澜成功夺冠。</span></div>
+                 </div>
+               </li>
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/国产动漫/g15.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">一念永恒</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:平凡少年白小纯为追求长生之法，一次次点燃仙香召唤仙人却屡遭雷劈。直到引路人李青候掌座的出现国漫巨制沙雕修仙番，承包你的笑点'</span></div>
+                 </div>
+               </li>
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/国产动漫/g14.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">善良的阿呆</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:一个只能靠偷盗才能生存的男孩阿呆，有一天他的生活中闯入一个叫哥里斯的炼金术士，哥里斯教他魔法带他回家，直到一个叫欧文的人...</span></div>
+                 </div>
+               </li>
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/日本动漫/r11.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">东京卍复仇者</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:主角‧武道做什麼事情都不顺，又住在破旧老公寓里，从电视上得知国中时期的前女友‧日向无端卷入帮派火拼而身亡。</span></div>
+                 </div>
+               </li>
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/剧场版/j9.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">工作细胞！</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:借由各式「细胞拟人化」让原本生硬无趣的细胞知识，变得生动有趣且更贴近人心。</span></div>
+                 </div>
+               </li>
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/国产动漫/g13.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">解离妖圣</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:五百年，妖圣齐天一对多，与神族众将大战天庭！临死使出解离禁术，自爆炸毁南天门，魂魄也散落三界……</span></div>
+                 </div>
+               </li>
+               </li>
+               <li class="d-flex border-bottom pb-3 mb-3">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/日本动漫/r14.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">伊甸星原</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:宇宙历X492年，无数的人在宇宙间飞行、在星球间巡航的时代，视频上传者B·Cuber蕾贝卡与行星格兰贝尔的少年四季相遇了。</span></div>
+                 </div>
+               </li>
+               <li class="d-flex">
+                 <div class="firsta"><a href="./index2.html"><img src="./img/国产动漫/g9.jpg"></a></div>            
+                 <div class="divw ml-1">
+                   <p><a href="./index2.html" class="afirst5">武神主宰</a></p>
+                   <span>状态:</span><span style="color: red;margin-left: 7%;">连载</span>
+                   <div class="div0"><span class="span0">简介:主角秦尘本是武域中最顶尖的天才强者，却遭歹人暗算，陨落大陆禁地死亡峡谷。必死无疑的秦尘，却意外触发神秘古剑的力量..</span></div>
+                 </div>
+               </li>
+             </ul>
+          </div>
+         </div>
+        <div class="row first13 mt-5 text-center">
+          <p class="w-100">本网站提供的资源均系收集于各大视频网站，本网站只提供web页面服务，不参与录制、上传</p>
+          <p class="w-100">若本站收录的节目无意侵犯了贵司版权,即刻删除</p>
+          <p class="w-100">Copyright © 2021<a href="" class="ml-2">风车动漫网</a></p>
+          <p class="w-100 font-weight-light mt-3">站长统计</p>
+        </div>
+    </div>
+    <a href="#" style="position: absolute;right: 5px;;"><img src="./img/dixia.gif" style="width: 35px;height: 35px;"></a>
+  </div> 
+</body>
+<script>
+new Vue({
+    el:"#app",
+    data:{
+      i:0
+    },
+    methods:{
+      change(i){
+        this.i=i;
+      }
+    }
+  })
+</script>
+</html>
